@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import {ConfigService} from "../../services/config.service";
+
 
 @Component({
   selector: 'app-welcome',
@@ -6,10 +8,12 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./welcome.component.css']
 })
 export class WelcomeComponent implements OnInit {
+    applicationName: string = ""
 
-  constructor() { }
+  constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
+    this.configService.getConfig().subscribe(value => this.applicationName = value.applicationName)
   }
 
 }
