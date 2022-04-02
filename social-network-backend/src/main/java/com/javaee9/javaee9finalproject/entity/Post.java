@@ -19,6 +19,8 @@ import java.time.ZonedDateTime;
 @AllArgsConstructor
 @Builder
 @Entity
+
+// TODO: add the same validation as in dto
 public class Post {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
