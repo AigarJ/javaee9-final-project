@@ -7,11 +7,13 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
+import { NewsFormComponent } from './components/news-form/news-form.component';
 
 @NgModule({
   declarations: [
     WelcomeComponent,
-    NewsFeedComponent
+    NewsFeedComponent,
+    NewsFormComponent
   ],
   imports: [
     BrowserModule,
