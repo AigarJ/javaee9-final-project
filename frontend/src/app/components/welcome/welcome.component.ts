@@ -13,7 +13,9 @@ export class WelcomeComponent implements OnInit {
   constructor(private configService: ConfigService) { }
 
   ngOnInit(): void {
-    this.configService.getConfig().subscribe(value => this.applicationName = value.applicationName)
+    this.configService
+      .getConfig()
+      .subscribe(value => this.applicationName = value.applicationName)
   }
 
 }

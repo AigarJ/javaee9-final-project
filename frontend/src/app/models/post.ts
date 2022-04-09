@@ -1,7 +1,8 @@
 export interface Post {
+  id: number;
   header: string,
   content: string,
   author: string,
-  creationTimestamp: Date,
-  updateTimestamp: Date
+  creationTimestamp: string, // TODO: change to Date later
+  updateTimestamp: string
 }
