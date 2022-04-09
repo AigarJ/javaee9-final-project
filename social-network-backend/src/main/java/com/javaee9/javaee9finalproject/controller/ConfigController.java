@@ -11,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 @Slf4j
 @RequestMapping("/config")
-@CrossOrigin("http://localhost:4200")
+@CrossOrigin("${allowed.origin.url}")
 public class ConfigController {
     private final ConfigService configService;
 
