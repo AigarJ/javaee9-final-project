@@ -24,12 +24,14 @@ public class PostConverter implements Converter<PostDto, Post> {
 
     @Override
     public PostDto fromEntityToDto(Post post) {
-        return new PostDto(post.getId(),
+        return new PostDto(
+                post.getId(),
                 post.getHeader(),
                 post.getContent(),
                 post.getAuthor(),
                 post.getCreationTimestamp().toString(),
-                post.getUpdateTimestamp().toString());
+                post.getUpdateTimestamp().toString()
+                );
     }
 
     private ZonedDateTime fromString(String timestamp) {

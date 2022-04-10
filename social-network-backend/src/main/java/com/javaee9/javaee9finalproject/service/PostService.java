@@ -52,6 +52,7 @@ public class PostService {
     public PostDto createNewPost(PostDto toStore) {
         log.info("creating new post: [{}]", toStore);
 
+
         var entity = postConverter.fromDtoToEntity(toStore);
         postRepository.save(entity);
         var result = postConverter.fromEntityToDto(entity);

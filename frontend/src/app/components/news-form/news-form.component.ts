@@ -1,6 +1,8 @@
 import { Component } from '@angular/core';
 import {FormBuilder, Validators} from "@angular/forms";
 import {NewsFeedService} from "../../services/news-feed.service";
+import {conditionallyCreateMapObjectLiteral} from "@angular/compiler/src/render3/view/util";
+import {Post} from "../../models/post";
 
 @Component({
   selector: 'app-news-form',
@@ -26,6 +28,18 @@ export class NewsFormComponent {
 
   onFormSubmit() {
     console.log("on submitting whole form")
+    console.log(`value from form: [${JSON.stringify(this.postForm.value)}]`)
+
+    let post: Post = {
+      id: null,
+      author: this.postForm.value.author,
+      content: this.postForm.value.content,
+      header: this.postForm.value.header,
+      creationTimestamp: null,
+      updateTimestamp: null
+    }
+      this.newsService.createNewPost(post)
+
   }
 }
 

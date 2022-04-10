@@ -39,7 +39,7 @@ export class NewsFeedService {
       creation_timestamp: newPost.creationTimestamp,
       update_timestamp: newPost.updateTimestamp
     }
-    console.log(`Trying to send to backend new post: " [${newPost}] as payload: [${payload}`)
-    this.http.post(BACKEND_CREATE_POST, payload)
+    console.log(`Trying to send to backend new post: " [${JSON.stringify(newPost)}] as payload: [${JSON.stringify(newPost)}`)
+    this.http.post(BACKEND_CREATE_POST, payload).subscribe()
   }
 }
