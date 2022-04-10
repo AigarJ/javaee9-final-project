@@ -31,7 +31,15 @@ export class NewsFeedService {
   }
 
   createNewPost(newPost: Post){
-    console.log(`Trying to send to backend new post: " [${newPost}]`)
-    this.http.post(BACKEND_CREATE_POST, newPost)
+    let payload = {
+      id: newPost.id,
+      header: newPost.header,
+      content: newPost.content,
+      author: newPost.author,
+      creation_timestamp: newPost.creationTimestamp,
+      update_timestamp: newPost.updateTimestamp
+    }
+    console.log(`Trying to send to backend new post: " [${newPost}] as payload: [${payload}`)
+    this.http.post(BACKEND_CREATE_POST, payload)
   }
 }
