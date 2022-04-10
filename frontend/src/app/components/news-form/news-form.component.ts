@@ -1,17 +1,26 @@
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
+import {FormBuilder, Validators} from "@angular/forms";
 
 @Component({
   selector: 'app-news-form',
   templateUrl: './news-form.component.html',
   styleUrls: ['./news-form.component.css']
 })
-export class NewsFormComponent implements OnInit {
+export class NewsFormComponent {
 
-  constructor() { }
+  postForm = this.formBuilder.group({
+    header: ['', Validators.required],
+    content: ['', Validators.required],
+    author: ['', Validators.required]
+  })
 
-  ngOnInit(): void {
+  constructor(private formBuilder: FormBuilder) { }
+
+
+
+  createPost() {
+    console.log("trying to create post....")
   }
-
 }
 
 // TODO:

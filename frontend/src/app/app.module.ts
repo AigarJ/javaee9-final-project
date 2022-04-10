@@ -8,6 +8,7 @@ import {MatCardModule} from "@angular/material/card";
 import {MatButtonModule} from "@angular/material/button";
 import { NewsFeedComponent } from './components/news-feed/news-feed.component';
 import { NewsFormComponent } from './components/news-form/news-form.component';
+import {ReactiveFormsModule} from "@angular/forms";
 
 @NgModule({
   declarations: [
@@ -15,13 +16,14 @@ import { NewsFormComponent } from './components/news-form/news-form.component';
     NewsFeedComponent,
     NewsFormComponent
   ],
-  imports: [
-    BrowserModule,
-    HttpClientModule,
-    BrowserAnimationsModule,
-    MatCardModule,
-    MatButtonModule
-  ],
+    imports: [
+        BrowserModule,
+        HttpClientModule,
+        BrowserAnimationsModule,
+        MatCardModule,
+        MatButtonModule,
+        ReactiveFormsModule
+    ],
   providers: [],
   bootstrap: [WelcomeComponent]
 })

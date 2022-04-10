@@ -1,10 +1,13 @@
-<form>
+<form [formGroup]="postForm">
+  <p>Create new post</p>
   <label for="header">Header</label>
-  <input id="header" type="text"><br>
+  <input id="header" type="text" formControlName="header"><br><br>
 
   <label for="content">Content</label>
-  <input id="content" type="text"><br>
+  <input id="content" type="text" formControlName="content"><br><br>
 
   <label for="author">Author</label>
-  <input id="author" type="text"><br>
+  <input id="author" type="text" formControlName="author"><br><br>
+
+  <button (click)="createPost()" mat-raised-button>Create post</button>
 </form>
